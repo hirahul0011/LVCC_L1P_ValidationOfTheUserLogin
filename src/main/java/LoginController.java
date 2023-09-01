@@ -34,6 +34,8 @@ public class LoginController extends HttpServlet {
 		String password=request.getParameter("password");
 		
 		if(username.equalsIgnoreCase("donald") && password.equals("duck")) {
+			session.setAttribute("username", username);
+			request.getRequestDispatcher("dashboard").forward(request, response);	
 			
 		}else {			
 			PrintWriter out=response.getWriter();
