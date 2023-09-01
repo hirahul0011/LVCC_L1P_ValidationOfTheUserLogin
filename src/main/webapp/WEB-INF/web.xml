@@ -19,4 +19,14 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Dashboard</display-name>
+    <servlet-name>Dashboard</servlet-name>
+    <servlet-class>Dashboard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dashboard</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
 </web-app>
