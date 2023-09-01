@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Dashboard
+ * Servlet implementation class Logout
  */
-public class Dashboard extends HttpServlet {
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Dashboard() {
+    public Logout() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,14 +30,14 @@ public class Dashboard extends HttpServlet {
 		// TODO Auto-generated method stub
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		HttpSession session=request.getSession();
-		String username=(String)session.getAttribute("username");
-		PrintWriter out=response.getWriter();
-		out.println("<html><body>");
-	    out.println("Welcome "+username+"!!<br>");
+		session.invalidate();           
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+	    out.println("Logged out of session.<br>");
 	    out.println("</body></html>");
-//		out.println("<center><span style='color:red'>Welcome "+username+"!!</span></center>"); //code is used to append
-	    																//something on the existing page
-	    out.println("<a href='logout'>Logout of session</a><br>");
+	    
+	    out.println("<a href='index.html'>Login again</a><br>");	    
+	    
 	}
 
 	/**
